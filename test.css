@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin :0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    
+}
+form{
+    color: black;
+    background: rgb(247, 245, 245);
+    width: 300px;
+    height: 500px;
+    padding: 75px 50px;
+    position:  absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid rgb(12, 12, 12);
+    border-radius: 10px;
+
+    
+}
+h1{
+    text-align: center;
+    margin-bottom: 45px;
+    color: rgb(15, 14, 14);
+    font-size: 40px;
+    opacity: 1;
+}
+.inputs{
+    border-bottom: 2px solid rgb(39, 25, 25);
+    position :relative;
+    margin-top: 20px;
+
+} 
+.inputs input{
+    background: rgb(236, 227, 227);
+    border:solid 1px rgb(184, 172, 172);
+    width: 100%;
+    height: 25px;
+    color: rgb(8, 8, 8);
+    font-size: 15px;
+    border-radius: 5px;
+    
+
+}
+.inputs label{
+    font-size: 20px;
+    color:black;
+}
+.signup{
+    height: 30px;
+    width: 100%;
+    border: solid 3px black ;
+    outline: none;
+    color:  rgb(119, 165, 119);
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+
+}
+.signup:hover{
+    background-position: right;
+    font-size: 20px;
+    color: brown;
+}
+.hidden{
+    display: none;
+}
+.success{
+    color: green;
+}
+.error{
+    color: red;
+}
+.margin_top{
+    margin-top: 10px;
+}
+.padding_left{
+    padding-left: 5px;
+}

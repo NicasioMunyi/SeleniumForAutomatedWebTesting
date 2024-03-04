@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+
+
+</head>
+
+<body>
+    <form action="" class="">
+        <h1>Registration Form</h1>
+        <div class="inputs">
+            <label for="email">Enter a Valid Email</label>
+            <input type="text" id="email" class="padding_left">
+        </div>
+        <div class="inputs">
+            <label for="pass2">Enter Password</label>
+            <input type="password" id="pass">
+        </div>
+        <div class="inputs">
+            <label for="pass2">Re-enter password</label>
+            <input type="password" id="pass2">
+        </div>
+        <div class="error hidden margin_top" id="fail">
+            <label for=" error">Invalid details</label>
+        </div>
+        <div class="success hidden margin_top" id="success">
+            <label for="success">account created Successfully</label>
+        </div>
+
+        <input type="button" value="Sign Up" onclick="show()" id="btnSign" class="signup">
+
+    </form>
+    <Script>
+        function show() {
+
+            var pass1, pass2;
+            pass1 = document.getElementById('pass').value;
+            pass2 = document.getElementById('pass2').value;
+            checkEqual(pass1, pass2);
+
+            var input = document.getElementById('email')
+            if (ValidateEmail(input) && checkEqual(pass1, pass2)) {
+                document.getElementById('success').style.display = 'block'
+
+            } else {
+                document.getElementById('fail').style.display = 'block'
+            }
+
+        }
+        //check if the two passwords are equal return true or false
+        function checkEqual(pass1, pass2) {
+            //if equal find requiremts
+            if (pass1 == pass2) {
+                if (checkLength(pass1) && if_contains_carpital(pass1) && if_contains_number(pass1)) {
+                    console.log("Pass validation successful");
+                    return true
+                } else {
+                    console.log("not successful");
+                    return false
+                }
+
+
+            }
+
+        }
+        //Check if they are of chorect format   return true or false
+        //Check emails format return true or false
+        function ValidateEmail(input) {
+
+            var mailValidator = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (input.value.match(mailValidator)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        //check if passwords length>=6
+        function checkLength(pass) {
+            return pass.length >= 6;
+        }
+        //Checkw if contains Carptial
+        function if_contains_carpital(pass) {
+            for (var i = 0; i < pass.length; i++) {
+                let char = pass.charAt(i);
+                var a = false;
+
+                //be sure of the correct logic for the code, this is wrong
+                if (char == char.toUpperCase() && isNaN(char)) {
+                    a = true
+                    break;
+                } else {
+                    a = false;
+                }
+            }
+            return a;
+
+        }
+        //check if contains a number
+        function if_contains_number(pass) {
+            for (var i = 0; i < pass.length; i++) {
+                let char = pass.charAt(i);
+                var a = false;
+                if (!isNaN(char)) {
+                    a = true;
+                    break;
+                } else {
+                    a = false;
+                }
+            }
+            return a;
+
+        }
+        function openNew() {
+            window.open("http://127.0.0.1:5500/cssMasterClassTutorial/MyCSS/mycss.html")
+        }
+
+        // if all true, registration successful esle  registration failed
+    </Script>
+</body>
+
+</html>
